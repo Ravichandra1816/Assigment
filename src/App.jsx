@@ -1,9 +1,17 @@
-import { useState } from "react";
+import React from "react";
+import { Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./Component/Login";
+import UserList from "./Component/UserList";
+import UserEdit from "./Component/UserEdit";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello ji!</h1>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/users" element={<UserList />} />
+        <Route path="/users/edit/:id" element={<UserEdit />} />
+      </Routes>
     </>
   );
 }
